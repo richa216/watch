@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vbbn</title>
+
+	<style type="text/css">
+		
+		.clock
+		{
+			position: relative;
+			width: 600px;
+			height: 600px;
+			border: 30px solid #641E16  ;
+			border-radius: 50%;
+			background-color:#F2D7D5;
+			margin-left: 21%;
+			margin-right: 25%;
+		
+
+		}
+
+		.circle
+		{
+			width: 5vw;
+			height: 5vw;
+			border-radius: 50%;
+			background-color: black;
+
+			border: 10px solid #641E16 ;
+		}
+
+		
+		.c
+		{
+			margin-left: 284px;
+			margin-top: 268px;
+		}
+		.min
+		{
+			position: absolute;
+			background: black;
+			border-radius: 10px;
+			width: 1.6%;
+			height: 30%;
+			top: 19%;
+			left:52.6%;
+			opacity: 0.8;
+		
+			transform-origin: bottom;
+			
+			
+			
+
+		}
+		#hour
+		{
+			position: absolute;
+			background: black;
+			width: 1%;
+			height: 24%;
+			top: 24%;
+			left: 52.8%;
+			opacity: 0.8;
+			transform-origin: bottom;
+			
+		
+		
+		}
+		.second
+		{
+			position: absolute;
+			background: black;
+			border-radius: 30px;
+		
+			width: 0.5%;
+			height: 31%;
+			top: 17%;
+			left:52.8%;
+			opacity: 0.8;
+		    transform-origin: bottom;
+			
+			
+			
+			
+		}
+
+
+		.num1,.num2,.num3,.num4
+		{
+			position: absolute;
+			background:#F2D7D5;
+			font-size: 6vw;
+
+		}
+		.num1
+		{
+		
+			top:3%;
+			left: 49.5%;
+			
+		
+		}
+		.num2
+		{
+			top:84%;
+			left: 48.5%;
+		
+		}
+		.num3
+		{
+		
+			top:43%;
+			left: 88.5%;
+
+
+		}
+		.num4
+		{
+		
+			top:45%;
+			left: 4.5%;
+		}
+
+
+		.one,.two,.four,.five,.seven,.eight,.ten,.eleven
+		{
+			position: absolute;
+			background:black;
+			width: 10px;
+			height: 50px;
+			transform-origin: bottom;
+		}
+
+		.one
+		{
+			top:11%;
+			left: 70%;
+			transform: rotate(30deg);
+			
+		}
+
+
+		.two
+		{
+	
+			top:24%;
+			left: 82%;
+				transform: rotate(60deg);
+		
+		}
+
+		.four
+		{
+
+			top:60%;
+			left: 82%;
+			transform: rotate(110deg);
+			
+		}
+
+
+		.five
+		{
+
+			top:75%;
+			left: 70%;
+			transform: rotate(140deg);
+		}
+
+
+		.seven
+		{
+			top:76%;
+			left: 32%;
+			transform: rotate(230deg);
+		}
+
+		.eight
+		{
+			top: 60%;
+			left: 16%;
+			transform: rotate(260deg);
+		}
+		.ten
+		{
+			top: 22%;
+			left: 18%;
+			transform: rotate(310deg);
+		}
+		.eleven
+		{
+			top: 8%;
+			left: 37%;
+			transform: rotate(340deg);
+		}
+		.digitalClock
+		{
+
+			display: flex;
+			font-size: 12vw;		   
+			font-weight: bold;
+			color: white;
+			height: 20%;
+			width: 60%;
+			
+			text-align: center;
+			padding-left: 30%;
+
+		}
+		
+		.back
+		{
+			text-align: center;
+		}
+
+	
+	
+
+
+
+
+	</style>
+</head>
+<body style="background-color: black;text-align: center;">
+	<div class="back">
+	<div class="clock">
+		
+		<div id="hour"></div>
+		<div class="min" id="min"></div>
+		<div class="second" id="second"></div>
+		<div class="c"><div class="circle"></div></div>
+		<div class="num1">12</div>
+		<div class="num2">6</div>
+		<div class="num3">3</div>
+		<div class="num4">9</div>
+		<div class="one"></div>
+		<div class="two"></div>
+		<div class="four"></div>
+		<div class="five"></div>
+		<div class="six"></div>
+		<div class="seven"></div>
+		<div class="eight"></div>
+		<div class="ten"></div>
+		<div class="eleven"></div>
+		
+	</div>
+
+
+	<div class="digitalClock">
+		<div class="dhour" id="dh" >00:</div>
+		<div class="dmin" id="dm">00:</div>
+		<div class="dsec" id="ds">00</div>
+		
+
+	</div>
+</div>
+
+
+
+
+
+
+	<script>
+		
+
+		setInterval(()=>{
+			date1 = new Date();
+			hourt = date1.getHours();
+			minutet = date1.getMinutes();
+			secondt = date1.getSeconds();
+			hrotation = 30*hourt+minutet/2;
+            mrotation = 6*minutet;
+            srotation = 6*secondt;
+            document.getElementById('dh').innerHTML = hourt;
+             document.getElementById('dm').innerHTML = ':'+minutet;
+              document.getElementById('ds').innerHTML = ':'+secondt;
+            hour.style.transform = `rotate(${hrotation}deg)`;
+            min.style.transform = `rotate(${mrotation}deg)`;
+            second.style.transform = `rotate(${srotation}deg)`;
+		},1000);
+
+
+		
+	</script>
+
+</body>
+</html>
